@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TaskForm from './components/TaskForm';
-import Control from './components/Control';
+import TaskControl from './components/TaskControl';
 import TaskList from './components/TaskList';
 class App extends Component {
   constructor(props) {
@@ -205,7 +205,7 @@ class App extends Component {
   }
 
   onSearch = (keyword) => {
-      console.log(keyword);
+      //console.log(keyword);
       // set state
       this.setState({
         keyword : keyword
@@ -220,15 +220,15 @@ class App extends Component {
       sortBy : sortBy,
       sortValue : SortValue
     })
-    console.log(this.state);
+    //console.log(this.state);
   }
 
   render() {
     var { tasks,isDissplayForm,taskEditting,fillter,keyword,sortBy,sortValue } = this.state; // var tasks = this.state.tasks
                                                           // Close form
     //console.log(fillter);
-    console.log(sortBy);
-    console.log(sortValue);
+    // console.log(sortBy);
+    // console.log(sortValue);
 
     if(fillter)
     {
@@ -305,7 +305,7 @@ class App extends Component {
             <br />
             
             {/* control search - sort */}
-            <Control onSearch={this.onSearch} onSort={this.onSort} sortBy={sortBy} sortValue={sortValue} />
+            <TaskControl onSearch={this.onSearch} onSort={this.onSort} sortBy={sortBy} sortValue={sortValue} />
             <br />
             <div className="row mt-15">
               <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
